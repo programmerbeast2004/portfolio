@@ -1446,7 +1446,7 @@ body.dark .h-bg-word {
   .split-layout {
     display: grid !important;
     grid-template-columns: 400px 1fr !important;
-    max-width: 1200px !important;
+    max-width: 1440px !important;
     margin: 0 auto !important;
     gap: 60px !important;
     padding: 0 40px !important;

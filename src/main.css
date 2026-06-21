@@ -255,7 +255,7 @@ nav{
 /* ── Page System ──────────────────────────────────────────── */
 .page{display:none;min-height:100vh;}
 .page.active{display:block;}
-.container{max-width:1200px;margin:0 auto;padding:0 52px;}
+.container{max-width:1440px;margin:0 auto;padding:0 52px;}
 section{padding:110px 0;}
 .sep{height:1px;background:var(--border);margin:0 52px;}
 
@@ -599,12 +599,12 @@ section{padding:110px 0;}
    SKILLS
 ═══════════════════════════════════════════════════════════ */
 .skills-g{display:grid;grid-template-columns:repeat(5,1fr);gap:0;}
-.skill-c{background:var(--bg);padding:34px 26px;transition:background .3s;}
+.skill-c{background:var(--bg);padding:80px 60px;transition:background .3s;}
 .skill-c:hover{background:var(--bg2);}
-.skill-h{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--text3);margin-bottom:18px;padding-bottom:12px;border-bottom:1px solid var(--border);}
-.skill-c ul{list-style:none;display:flex;flex-direction:column;gap:8px;}
-.skill-c ul li{font-size:14px;font-weight:700;color:var(--text2);display:flex;align-items:center;gap:8px;transition:color .2s;}
-.skill-c ul li::before{content:'';width:3px;height:3px;border-radius:50%;background:var(--text3);flex-shrink:0;transition:background .2s;}
+.skill-h{font-size:24px;font-weight:900;letter-spacing:5px;text-transform:uppercase;color:var(--text3);margin-bottom:48px;padding-bottom:32px;border-bottom:3px solid var(--border);}
+.skill-c ul{list-style:none;display:flex;flex-direction:column;gap:40px;}
+.skill-c ul li{font-size:clamp(28px, 3vw, 42px);font-weight:800;line-height:1.2;color:var(--text2);display:flex;align-items:center;gap:24px;transition:color .2s;}
+.skill-c ul li::before{content:'';width:12px;height:12px;border-radius:50%;background:var(--text3);flex-shrink:0;transition:background .2s;}
 .skill-c:hover ul li{color:var(--text);}
 .skill-c:hover ul li::before{background:var(--text);}
 
@@ -1264,7 +1264,7 @@ body.light .fsub{background:#000000 !important;color:#ffffff !important;}
 
 /* Large Desktop */
 @media(min-width:1440px){
-  .container{max-width:1320px;}
+  .container{max-width:1440px;}
   section{padding:120px 0;}
   .s-title{font-size:clamp(52px,6vw,80px);}
   .h-bg-word{

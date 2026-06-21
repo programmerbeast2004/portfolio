@@ -1,5 +1,6 @@
 import React from 'react';
 import { portfolioConfig } from '../data/config';
+import { Link } from 'react-router-dom';
 
 export const HeroProfile = () => {
   const { personal, social } = portfolioConfig;
@@ -112,18 +113,29 @@ export const HeroContent = () => {
 
   return (
     <section id="hero-content">
-      <div className="h-bg-word" id="hero-bg-word">WIN !!</div>
-      <div className="h-content" style={{position: 'relative', zIndex: 10, textAlign: 'left', alignItems: 'flex-start', padding: 0}}>
+      <div className="container">
+      <div className="h-content" style={{position: 'relative', zIndex: 10, textAlign: 'left', alignItems: 'flex-start', padding: 0, marginLeft: 'auto', marginRight: '0', maxWidth: '850px', width: '100%'}}>
         <div className="h-eyebrow" id="h-eyebrow" style={{justifyContent: 'flex-start'}}>{personal.location}</div>
         <h1 className="h-name" style={{textAlign: 'left'}}>Apoorv<br/><em>Mehrotra</em></h1>
         <div className="h-roles" style={{justifyContent: 'flex-start'}}><span>AIML Enthusiast</span><div className="rsep"></div><span>MERN Developer</span><div className="rsep"></div><span>Problem Solver</span></div>
-        <p className="h-bio" id="h-bio" style={{textAlign: 'left', borderTop: 'none', borderLeft: '1px solid var(--border-h, rgba(255,255,255,0.3))', padding: '0 0 0 16px'}}>{personal.bio}</p>
-        <div className="h-btns" style={{justifyContent: 'flex-start'}}>
-          <a href="/projects" className="btn-p">View Projects</a>
+        
+        <div style={{
+          backgroundColor: 'var(--bg)',
+          padding: '40px',
+          marginTop: '40px',
+          marginBottom: '40px',
+          transition: 'background 0.3s ease',
+        }} onMouseEnter={(e) => e.currentTarget.style.background = 'var(--bg2)'} onMouseLeave={(e) => e.currentTarget.style.background = 'var(--bg)'}>
+          <p className="h-bio" id="h-bio" style={{textAlign: 'left', margin: 0, padding: 0, fontSize: '18px', lineHeight: '1.7', color: 'var(--text2)', border: 'none'}}>{personal.bio}</p>
+        </div>
+
+        <div className="h-btns" style={{justifyContent: 'flex-start', gap: '16px', display: 'flex'}}>
+          <Link to="/projects" className="btn-p">View Projects</Link>
           <a href="#contact" className="btn-p">Let's Talk</a>
         </div>
       </div>
       <div className="scroll-ind"><div className="scroll-ln"></div>scroll</div>
+      </div>
     </section>
   );
 };
