@@ -131,7 +131,7 @@ export const HeroContent = () => {
 
         <div className="h-btns" style={{justifyContent: 'flex-start', gap: '16px', display: 'flex'}}>
           <Link to="/projects" className="btn-p">View Projects</Link>
-          <a href="#contact" className="btn-p">Let's Talk</a>
+          <a href="/#contact" className="btn-p" onClick={(e) => { e.preventDefault(); if (window.Router) { window.Router.navTo(e, 'contact'); } }}>Let's Talk</a>
         </div>
       </div>
       <div className="scroll-ind"><div className="scroll-ln"></div>scroll</div>
