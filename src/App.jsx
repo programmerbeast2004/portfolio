@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
+import { BrowserRouter as Router, useNavigate } from 'react-router-dom';
 import { ArrowUp } from 'lucide-react';
 import Navbar from './components/Navbar';
-import Home from './components/Home';
 import TalkModal from './components/TalkModal';
 import Terminal from './components/Terminal';
-import { BlogListPage, BlogPostPage, ProjListPage, SingleProjPage, CertsListPage, CertsSourcePage, ResumePage } from './components/SubPages';
+import AppRoutes from './AppRoutes';
 import { portfolioConfig } from './data/config';
 
 // Import exact CSS
@@ -54,16 +53,16 @@ const RouterBridge = () => {
 
 function App() {
   const [talkOpen, setTalkOpen] = useState(false);
-  const [preloaderOpen, setPreloaderOpen] = useState(true);
+  const [preloaderOpen, setPreloaderOpen] = useState(window.location.pathname === '/');
 
   useEffect(() => {
-    // IMPORTANT: Expose STATE globally so that terminal.js works exactly as original!
-    window.STATE = portfolioConfig;
-
-    // Hide preloader after a short delay to match original behavior
-    const timer = setTimeout(() => {
-      setPreloaderOpen(false);
-    }, 1500);
+    // Hide preloader after a short delay if it's open (usually only on home page load)
+    let timer;
+    if (preloaderOpen) {
+      timer = setTimeout(() => {
+        setPreloaderOpen(false);
+      }, 1500);
+    }
 
     // Load original vanilla JS scripts to guarantee identical behavior
     const loadScript = (src) => {
@@ -83,7 +82,6 @@ function App() {
       await loadScript('/js/mouseTracker.js');
       await loadScript('/js/interactiveAbout.js');
       await loadScript('/js/quote-generator.js');
-      await loadScript('/js/terminal.js');
       await loadScript('/js/animations.js?v=purge');
     };
 
@@ -137,7 +135,7 @@ function App() {
     routeObserver.observe(document.body, { childList: true, subtree: true });
 
     return () => {
-      clearTimeout(timer);
+      if (timer) clearTimeout(timer);
       window.removeEventListener('mousemove', moveCursor);
       mutationObserver.disconnect();
       scrollObserver.disconnect();
@@ -167,16 +165,7 @@ function App() {
       <TalkModal isOpen={talkOpen} onClose={() => setTalkOpen(false)} />
       <Terminal />
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/blog" element={<BlogListPage />} />
-        <Route path="/blog/:id" element={<BlogPostPage />} />
-        <Route path="/projects" element={<ProjListPage />} />
-        <Route path="/projects/:id" element={<SingleProjPage />} />
-        <Route path="/certs" element={<CertsListPage />} />
-        <Route path="/certs/:sourceId" element={<CertsSourcePage />} />
-        <Route path="/resume" element={<ResumePage />} />
-      </Routes>
+      <AppRoutes />
 
       <a href="#" className="scroll-top" id="scrollTopBtn" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
         <ArrowUp size={20} />
