@@ -35,14 +35,14 @@ export const portfolioConfig = {
     github_url: "https://github.com/programmerbeast2004",
     linkedin_url: "https://www.linkedin.com/in/its-apoorv-/",
     twitter_url: "https://x.com/Xandros07",
-    resume_url: "https://drive.google.com/file/d/10Q-oJ4Kwh-JT8d7Ubk1-q977wbFCDk5s/view?usp=sharing",
+    resume_url: "https://drive.google.com/file/d/1E6rk5EhjcbriAMyjlEIiCZ7WR1ZYQvaz/view?usp=sharing",
 
     // Specific arc-links (the curved links around the hero image)
     socials: {
       github: "https://github.com/programmerbeast2004",
       linkedin: "https://www.linkedin.com/in/its-apoorv-/",
       twitter: "https://x.com/Xandros07",
-      resume: "https://drive.google.com/file/d/10Q-oJ4Kwh-JT8d7Ubk1-q977wbFCDk5s/view?usp=sharing",
+      resume: "https://drive.google.com/file/d/1E6rk5EhjcbriAMyjlEIiCZ7WR1ZYQvaz/view?usp=sharing",
       leetcode: "https://leetcode.com/u/programmer_exe/",
       codeforces: "https://codeforces.com/profile/The_Better_Coder"
     }
@@ -53,7 +53,7 @@ export const portfolioConfig = {
     github: "https://github.com/programmerbeast2004",
     linkedin: "https://www.linkedin.com/in/its-apoorv-/",
     twitter: "https://x.com/Xandros07",
-    resume: "https://drive.google.com/file/d/10Q-oJ4Kwh-JT8d7Ubk1-q977wbFCDk5s/view?usp=sharing",
+    resume: "https://drive.google.com/file/d/1E6rk5EhjcbriAMyjlEIiCZ7WR1ZYQvaz/view?usp=sharing",
     leetcode: "https://leetcode.com/u/programmer_exe/",
     codeforces: "https://codeforces.com/profile/The_Better_Coder"
   },
@@ -65,7 +65,7 @@ export const portfolioConfig = {
     { id: "s1", value: "15+", label: "Projects Shipped", sort_order: 1 },
     { id: "s2", value: "3+", label: "Years Coding", sort_order: 2 },
     { id: "s3", value: "5+", label: "ML Models Deployed", sort_order: 3 },
-    { id: "s4", value: "200+", label: "GitHub Stars", sort_order: 4 },
+    { id: "s4", value: "20+", label: "GitHub Stars", sort_order: 4 },
   ],
 
   // --------------------------------------------------------------------------
