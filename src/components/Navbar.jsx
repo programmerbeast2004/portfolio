@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import ThemeSwitch from './ThemeSwitch';
+
 
 const Navbar = ({ onOpenTalk }) => {
   const [theme, setTheme] = useState('dark');
@@ -56,10 +58,7 @@ const Navbar = ({ onOpenTalk }) => {
           <li><a href="/#blog" onClick={(e) => handleNavClick(e, 'blog')}>Blog</a></li>
         </ul>
         <div className="nav-r">
-          <div className="theme-tog" onClick={toggleTheme}>
-            <span className="tog-lbl" id="tog-lbl">{theme === 'dark' ? 'Dark' : 'Light'}</span>
-            <div className="tog"></div>
-          </div>
+          <ThemeSwitch theme={theme} toggleTheme={toggleTheme} />
           <button onClick={(e) => handleNavClick(e, 'contact')} className="nav-cta nav-cta-desktop" style={{border: 'none', cursor: 'pointer', fontFamily: 'inherit', fontSize: '12px', background: 'var(--text)', color: 'var(--bg)', padding: '8px 16px', borderRadius: '4px', textTransform: 'uppercase', fontWeight: 700}}>Hire Me</button>
           <button id="nav-burger" onClick={() => setBurgerOpen(!burgerOpen)} className={`nav-burger-btn ${burgerOpen ? 'open' : ''}`}>
             <span></span>

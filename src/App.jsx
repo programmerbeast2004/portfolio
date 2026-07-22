@@ -165,6 +165,15 @@ function App() {
       <TalkModal isOpen={talkOpen} onClose={() => setTalkOpen(false)} />
       <Terminal />
 
+      <svg style={{visibility: 'hidden', position: 'absolute'}} width={0} height={0} xmlns="http://www.w3.org/2000/svg" version="1.1">
+        <defs>
+          <filter id="pencil-texture" x="-50%" y="-50%" width="200%" height="200%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves={3} result="noise" />
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale={3} xChannelSelector="R" yChannelSelector="G" />
+          </filter>
+        </defs>
+      </svg>
+
       <AppRoutes />
 
       <a href="#" className="scroll-top" id="scrollTopBtn" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
