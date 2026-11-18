@@ -1,78 +1,58 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { portfolioConfig } from '../data/config';
 import { Link } from 'react-router-dom';
 import DoodleSocials from './DoodleSocials';
+import ProfileCard from './ProfileCard';
 
 export const HeroProfile = () => {
   const { personal, social } = portfolioConfig;
-  const socialUrls = personal.socials || social;
+  const [theme, setTheme] = useState(
+    () => (typeof document !== 'undefined' && document.documentElement.getAttribute('data-theme')) || 'dark'
+  );
 
-  // For the mouse move chroma effect
-  const chromaMove = (e, element) => {
-    const rect = element.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    element.style.setProperty('--mx', `${x}px`);
-    element.style.setProperty('--my', `${y}px`);
-  };
+  useEffect(() => {
+    const observer = new MutationObserver(() => {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      if (currentTheme) setTheme(currentTheme);
+    });
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+    return () => observer.disconnect();
+  }, []);
 
-  const chromaLeave = (element) => {
-    element.style.setProperty('--mx', '50%');
-    element.style.setProperty('--my', '50%');
+  const handleContactClick = () => {
+    if (window.Router) {
+      window.Router.navTo(null, 'contact');
+    } else {
+      const el = document.getElementById('contact');
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
     <section id="hero-profile">
-      
       <div className="h-inner-profile">
-        <div 
-          className="chroma-card" 
-          style={{ marginTop: '10px' }}
-          onMouseMove={(e) => chromaMove(e, e.currentTarget)} 
-          onMouseLeave={(e) => chromaLeave(e.currentTarget)}
-        >
-          {personal.photo_url ? (
-            <img 
-              src={personal.photo_url} 
-              alt={personal.name} 
-              className="chroma-img"
-              style={{ objectFit: 'cover' }}
-            />
-          ) : (
-            <div 
-              className="chroma-img"
-              style={{ 
-                display: 'flex', 
-                alignItems: 'center', 
-                justifyContent: 'center', 
-                backgroundColor: 'rgba(255,255,255,0.05)', 
-                color: 'var(--text-primary)', 
-                fontSize: '120px', 
-                fontWeight: '800',
-                fontFamily: 'var(--font-heading)',
-                paddingTop: '20px'
-              }}
-            >
-              {personal.name.split(' ').map(n => n[0]).join('').substring(0, 2)}
-            </div>
-          )}
-          <div className="chroma-spot"></div>
-          <div className="chroma-footer">
-            <div className="chroma-name" id="h-chroma-name">{personal.name}</div>
-            <div className="chroma-role" id="h-chroma-role">{personal.title}</div>
-            <div className="chroma-status">
-              <div 
-                className="sdot" 
-                id="h-sdot"
-                style={{
-                  background: personal.available ? '#4ade80' : '#ef4444',
-                  boxShadow: `0 0 8px ${personal.available ? '#4ade80' : '#ef4444'}`
-                }}
-              ></div>
-              <span className="stxt" id="h-stxt">{personal.available ? 'Available for opportunities' : 'Not available currently'}</span>
-            </div>
-          </div>
-        </div>
+        <ProfileCard
+          avatarUrl={personal.photo_url || '/profile.jpg'}
+          miniAvatarUrl={personal.photo_url || '/profile.jpg'}
+          name={personal.name}
+          title={personal.title}
+          handle="programmerbeast2004"
+          status={personal.available ? 'Available for opportunities' : 'Not available currently'}
+          statusColor={personal.available ? '#22c55e' : '#ef4444'}
+          contactText="Contact"
+          onContactClick={handleContactClick}
+          holo={0.8}
+          glare={0.5}
+          tiltStrength={12}
+          parallax={8}
+          radius={16}
+          enableTilt={true}
+          intro={true}
+          showUserInfo={false}
+          enableMobileTilt={false}
+          theme={theme === 'light' ? 'light' : 'dark'}
+          className="mx-auto"
+        />
       </div>
       <div style={{ marginTop: '15px', width: '100%', zIndex: 10, position: 'relative' }}>
         <DoodleSocials />

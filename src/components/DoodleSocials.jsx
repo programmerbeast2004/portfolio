@@ -5,6 +5,7 @@ import { portfolioConfig } from '../data/config';
 const DoodleSocials = () => {
   const { personal, social } = portfolioConfig;
   const socialUrls = personal.socials || social;
+  const coffeeUrl = personal.buy_me_a_coffee_url || socialUrls?.coffee || '#';
 
   const icons = {
     github: <svg viewBox="0 0 24 24"><path d="M12 .5C5.73.5.75 5.48.75 11.75c0 4.9 3.18 9.06 7.6 10.53.56.1.77-.24.77-.54v-1.9c-3.09.67-3.74-1.49-3.74-1.49-.5-1.28-1.22-1.62-1.22-1.62-1-.68.07-.67.07-.67 1.1.08 1.68 1.13 1.68 1.13.98 1.67 2.57 1.19 3.2.91.1-.71.38-1.2.7-1.47-2.47-.28-5.07-1.23-5.07-5.5 0-1.22.43-2.21 1.13-2.99-.11-.28-.49-1.41.11-2.93 0 0 .92-.29 3.02 1.14.88-.24 1.82-.36 2.76-.36s1.88.12 2.76.36c2.1-1.43 3.02-1.14 3.02-1.14.6 1.52.22 2.65.11 2.93.7.78 1.13 1.77 1.13 2.99 0 4.28-2.61 5.22-5.09 5.49.39.33.73.98.73 1.98v2.94c0 .3.2.65.78.54 4.41-1.47 7.59-5.63 7.59-10.53C23.25 5.48 18.27.5 12 .5z"/></svg>,
@@ -42,12 +43,27 @@ const DoodleSocials = () => {
             ))}
           </ul>
           
-          <a href="/resume" onClick={(e) => { e.preventDefault(); if (window.Router) window.Router.showResume(); }} className="doodle-resume-btn">
-            DOWNLOAD RESUME
-            <svg viewBox="0 0 24 24" fill="currentColor" style={{width:'16px',height:'16px', marginLeft: '6px', transform: 'rotate(-5deg)'}}>
-              <path d="M7 10l5 5 5-5z"/>
-            </svg>
-          </a>
+          <div className="doodle-btns-wrapper">
+            <a href="/resume" onClick={(e) => { e.preventDefault(); if (window.Router) window.Router.showResume(); }} className="doodle-action-btn doodle-resume-btn">
+              <svg viewBox="0 0 24 24" fill="currentColor" style={{width:'16px',height:'16px', marginRight: '7px', transform: 'rotate(-4deg)'}}>
+                <path d="M12 16l-5-5h3V4h4v7h3l-5 5zm-7 2h14v2H5v-2z"/>
+              </svg>
+              DOWNLOAD RESUME
+            </a>
+
+            <a 
+              href={coffeeUrl} 
+              target="_blank" 
+              rel="noreferrer" 
+              className="doodle-action-btn doodle-coffee-btn"
+              title="Buy Me a Coffee"
+            >
+              <svg viewBox="0 0 24 24" fill="currentColor" style={{width:'16px',height:'16px', marginRight: '7px', transform: 'rotate(-3deg)'}}>
+                <path d="M20 3H4v10c0 2.21 1.79 4 4 4h6c2.21 0 4-1.79 4-4v-3h2c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 5h-2V5h2v3zM4 19h16v2H4z"/>
+              </svg>
+              BUY ME A COFFEE
+            </a>
+          </div>
         </div>
       </div>
     </StyledWrapper>
@@ -195,29 +211,37 @@ const StyledWrapper = styled.div`
     height: 100%;
   }
 
-  .doodle-resume-btn {
+  .doodle-btns-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    align-items: center;
+  }
+
+  .doodle-action-btn {
     position: relative;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: transparent; /* Solid fill moved to ::before */
     color: var(--bg); /* Reversed text */
-    padding: 14px 32px; /* Much more breathable, elegant padding */
-    font-size: 14px;
+    padding: 12px 24px;
+    font-size: 13px;
     font-weight: 700;
-    letter-spacing: 3px; /* Clean, spaced out letters */
+    letter-spacing: 2.5px;
     text-transform: uppercase;
     text-decoration: none;
     font-family: 'DM Mono', monospace;
     border: 3px solid var(--text); /* Adapts to theme */
-    border-radius: 15px 225px 15px 255px / 255px 15px 225px 15px;
     box-shadow: 4px 5px 0px var(--text); /* Adapts to theme */
     transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
-    transform: rotate(-1deg);
     z-index: 1;
+    cursor: pointer;
   }
 
-  .doodle-resume-btn::before {
+  .doodle-action-btn::before {
     content: '';
     position: absolute;
     inset: 3px; /* The gap! Separates border from fill */
@@ -227,8 +251,13 @@ const StyledWrapper = styled.div`
     transition: background-color 0.25s;
   }
 
+  .doodle-resume-btn {
+    border-radius: 15px 225px 15px 255px / 255px 15px 225px 15px;
+    transform: rotate(-1deg);
+  }
+
   .doodle-resume-btn:hover {
-    transform: translateY(-2px) scale(1.03) rotate(1deg);
+    transform: translateY(-2px) scale(1.02) rotate(1deg);
     box-shadow: 6px 7px 0px var(--text); 
     color: #000 !important; /* Force black text for high contrast on green */
     border-radius: 255px 15px 225px 15px / 15px 255px 15px 225px;
@@ -236,6 +265,22 @@ const StyledWrapper = styled.div`
 
   .doodle-resume-btn:hover::before {
     background-color: #4ade80; /* Bright green crayon fill on hover */
+  }
+
+  .doodle-coffee-btn {
+    border-radius: 255px 15px 225px 15px / 15px 255px 15px 225px;
+    transform: rotate(1deg);
+  }
+
+  .doodle-coffee-btn:hover {
+    transform: translateY(-2px) scale(1.02) rotate(-1deg);
+    box-shadow: 6px 7px 0px var(--text); 
+    color: #000 !important; /* Force black text for high contrast on yellow */
+    border-radius: 15px 225px 15px 255px / 255px 15px 225px 15px;
+  }
+
+  .doodle-coffee-btn:hover::before {
+    background-color: #ffdd00; /* Iconic Buy Me a Coffee golden yellow fill on hover */
   }
 
   /* --- CRAZY CRAYON HOVER ANIMATIONS --- */

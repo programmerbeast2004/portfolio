@@ -5,27 +5,27 @@ const Contact = () => {
   const { personal, social } = portfolioConfig;
 
   return (
-    <section id="contact" style={{ paddingBottom: '40px', paddingTop: '40px' }}>
+    <section id="contact" style={{ paddingBottom: '10px', paddingTop: '20px' }}>
       <div className="container">
         <div className="s-lbl fi">08 / Contact</div>
-        <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', marginBottom: '60px' }}>
+        <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', marginBottom: '24px' }}>
           <h2 className="s-title fi d1" style={{ marginBottom: 0 }}>Let's build<br/>something <em>smart</em></h2>
         </div>
 
         <div className="contact-g" style={{ display: 'flex', flexDirection: 'column' }}>
           <div className="fi" style={{ 
-            padding: '48px 40px', 
-            marginTop: '20px', 
-            marginLeft: '-40px', /* Pull it left to align text with heading */
+            padding: '32px 36px', 
+            marginTop: '8px', 
+            marginLeft: '-36px', /* Pull it left to align text with heading */
             backgroundColor: 'var(--bg)', 
             transition: 'background 0.3s ease',
             cursor: 'pointer' 
           }} onMouseEnter={(e) => e.currentTarget.style.background = 'var(--bg2)'} onMouseLeave={(e) => e.currentTarget.style.background = 'var(--bg)'}>
-            <p className="c-sub" style={{ fontSize: '20px', fontWeight: '500', marginBottom: '40px', lineHeight: '1.6', color: 'var(--text2)' }}>Got a project that needs intelligent engineering? I'd love to hear from you.</p>
+            <p className="c-sub" style={{ fontSize: '18px', fontWeight: '500', marginBottom: '24px', lineHeight: '1.6', color: 'var(--text2)' }}>Got a project that needs intelligent engineering? I'd love to hear from you.</p>
             
-            <div style={{ marginBottom: '50px', width: '100%', maxWidth: '100%' }}>
-              <div style={{ fontSize: '13px', textTransform: 'uppercase', letterSpacing: '4px', color: 'var(--text3)', marginBottom: '16px', fontWeight: '700' }}>Start a conversation</div>
-              <a href={`mailto:${personal.email}`} className="cool-email" style={{ fontSize: 'clamp(24px, 5vw, 40px)', fontWeight: '700', wordBreak: 'break-all', overflowWrap: 'anywhere', display: 'inline-block', maxWidth: '100%', color: 'var(--text)' }}>
+            <div style={{ marginBottom: '28px', width: '100%', maxWidth: '100%' }}>
+              <div style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '4px', color: 'var(--text3)', marginBottom: '12px', fontWeight: '700' }}>Start a conversation</div>
+              <a href={`mailto:${personal.email}`} className="cool-email" style={{ fontSize: 'clamp(22px, 4.5vw, 36px)', fontWeight: '700', wordBreak: 'break-all', overflowWrap: 'anywhere', display: 'inline-block', maxWidth: '100%', color: 'var(--text)' }}>
                 {personal.email}
               </a>
             </div>
@@ -61,7 +61,7 @@ const Contact = () => {
           </div>
         </div>
 
-        <div style={{ marginTop: '80px', paddingTop: '30px', borderTop: '1px solid var(--border)', textAlign: 'left', fontSize: '11px', color: 'var(--text3)', letterSpacing: '1px' }}>
+        <div style={{ marginTop: '32px', paddingTop: '20px', borderTop: '1px solid var(--border)', textAlign: 'left', fontSize: '11px', color: 'var(--text3)', letterSpacing: '1px' }}>
           2026 {personal.name}. Built with obsession.
         </div>
       </div>

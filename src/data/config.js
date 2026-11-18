@@ -27,7 +27,7 @@ export const portfolioConfig = {
     title: "AIML Enthusiast & MERN Stack Developer", // Displays under your name
     bio: "Building at the intersection of Artificial Intelligence, Automation, and Digital Innovation. Passionate about creating intelligent systems, scalable products, and impactful experiences that transform ideas into meaningful solutions for the real world.",
     email: "apoorv.mehrotra.work@gmail.com",
-    location: "India · Open to Remote",
+    location: "India · Open to Onsite & Remote",
     available: true, // Changes the green/red dot status
     photo_url: "/profile.jpg", // Add a URL to your photo if needed
 
@@ -36,6 +36,7 @@ export const portfolioConfig = {
     linkedin_url: "https://www.linkedin.com/in/its-apoorv-/",
     twitter_url: "https://x.com/Xandros07",
     resume_url: "https://drive.google.com/file/d/1E6rk5EhjcbriAMyjlEIiCZ7WR1ZYQvaz/view?usp=sharing",
+    buy_me_a_coffee_url: "https://buymeacoffee.com/its.apoorv",
 
     // Specific arc-links (the curved links around the hero image)
     socials: {
@@ -43,6 +44,7 @@ export const portfolioConfig = {
       linkedin: "https://www.linkedin.com/in/its-apoorv-/",
       twitter: "https://x.com/Xandros07",
       resume: "https://drive.google.com/file/d/1E6rk5EhjcbriAMyjlEIiCZ7WR1ZYQvaz/view?usp=sharing",
+      coffee: "https://buymeacoffee.com/its.apoorv",
       leetcode: "https://leetcode.com/u/programmer_exe/",
       codeforces: "https://codeforces.com/profile/The_Better_Coder"
     }
@@ -54,6 +56,7 @@ export const portfolioConfig = {
     linkedin: "https://www.linkedin.com/in/its-apoorv-/",
     twitter: "https://x.com/Xandros07",
     resume: "https://drive.google.com/file/d/1E6rk5EhjcbriAMyjlEIiCZ7WR1ZYQvaz/view?usp=sharing",
+    coffee: "https://buymeacoffee.com/its.apoorv",
     leetcode: "https://leetcode.com/u/programmer_exe/",
     codeforces: "https://codeforces.com/profile/The_Better_Coder"
   },
@@ -123,6 +126,20 @@ export const portfolioConfig = {
   // long_description & screenshot_url -> Rendered on the single project details page (/projects/:id)
   projects: [
     {
+      id: "b0a35aed-8939-41c2-9a08-2662be5c5b5e",
+      title: "Shotzi",
+      featured: true,
+      type: "web",
+      description: "A social web application for sharing images, messaging, and connecting with others, built with a focus on smooth user experience, secure authentication, and real-time interactions.",
+      long_description: "SHOTZI is a full-stack social web application I designed, built, and deployed end-to-end. The platform focuses on creating a smooth and calm experience for sharing content and connecting with others while maintaining secure and scalable backend architecture.\n\nKey Features\n• Image posting system with admin moderation workflow (pending → approved)\n• Notification system for approvals and admin messages\n• Secure 1-to-1 messaging and global chat\n• Follow / followers system\n• Custom user profiles\n• Authentication-protected routes with role-based access control\n\nEngineering Highlights\n• Relational database schema design\n• Row Level Security (RLS) implementation\n• Secure authentication and permission handling\n• Real-time messaging and notifications\n• Admin moderation workflows\n• Production deployment and performance optimization\n\nThis project reflects my approach to building products: thoughtful design combined with reliable backend engineering.",
+      tech: ["Next.js", "React", "Tailwind CSS", "Supabase", "PostgreSQL", "Vercel"],
+      github_url: "https://github.com/programmerbeast2004/shotzi",
+      live_url: "https://shotzi.its-apoorv.me",
+      image_url: "/assets/projects/proj4.jpg",
+      screenshot_url: "/assets/projects/proj4.jpg",
+      sort_order: 1
+    },
+    {
       id: "32db7052-329c-49ad-ab47-448493972628",
       title: "Text to Image Generator",
       featured: true,
@@ -134,62 +151,48 @@ export const portfolioConfig = {
       live_url: "https://text-image-conv.vercel.app/",
       image_url: "/assets/projects/proj1.jpg",
       screenshot_url: "/assets/projects/proj1.jpg",
-      sort_order: 3
-    },
-    {
-      id: "5391a3f9-6d73-4a43-92ff-48888303fb9e",
-      title: "Mechanical Elevator Clock",
-      featured: false,
-      type: "web",
-      description: "A visually engaging elevator-style digital clock that simulates moving number towers using smooth animations.",
-      long_description: "This project is a unique digital clock inspired by mechanical elevator display systems. Built using React and Tailwind CSS, it visually represents time through vertically scrolling number towers that mimic elevator movements behind fixed viewing windows. The clock updates in real time and provides both 12-hour and 24-hour formats for better usability. The focus of this project is on smooth animations, creative UI design, and performance optimization. It demonstrates strong frontend skills including state management, animation handling, and responsive design while delivering an interactive and visually appealing user experience.",
-      tech: ["React", "Tailwind CSS", "JavaScript", "CSS Animations"],
-      github_url: "https://github.com/programmerbeast2004/Digital_Clock",
-      live_url: "https://digital-clock-one-ochre.vercel.app/",
-      image_url: "/assets/projects/proj2.jpg",
-      screenshot_url: "/assets/projects/proj2.jpg",
-      sort_order: 4
-    },
-    {
-      id: "a7832175-3b44-4cad-ad19-7f604a514d23",
-      title: "E-Commerce Product Store (React + Tailwind)",
-      featured: false,
-      type: "web",
-      description: "A responsive e-commerce product store built with React and Tailwind CSS that fetches product data from an external API and displays it in a clean card-based interface.",
-      long_description: "This project is a practice-based e-commerce store built using React and Tailwind CSS. The application fetches product data from an external API and displays the products in a clean, modern card-based layout. Users can browse different items, view product details, and explore product categories through a responsive and user-friendly interface.\n\nThe main goal of this project was to practice modern frontend development concepts such as component-based architecture in React, API integration, and responsive UI design using Tailwind CSS. The project focuses on creating reusable components, maintaining a clean UI structure, and ensuring a smooth user experience across different screen sizes.\n\nThe application uses a fast development environment powered by Vite, allowing efficient builds and quick updates during development. Overall, this project demonstrates practical experience in building responsive web applications, handling API data, and implementing modern frontend design techniques using React and Tailwind CSS.",
-      tech: ["React", "Tailwind CSS", "JavaScript", "Vite", "REST API", "HTML", "CSS"],
-      github_url: "https://github.com/programmerbeast2004/WEB_dev_1",
-      live_url: "https://web-dev-1-three.vercel.app/",
-      image_url: "/assets/projects/proj3.jpg",
-      screenshot_url: "/assets/projects/proj3.jpg",
       sort_order: 2
     },
     {
-      id: "b0a35aed-8939-41c2-9a08-2662be5c5b5e",
-      title: "Shotzi",
+      id: "proj_asciify",
+      title: "Asciify",
       featured: true,
       type: "web",
-      description: "A social web application for sharing images, messaging, and connecting with others, built with a focus on smooth user experience, secure authentication, and real-time interactions.",
-      long_description: "SHOTZI is a full-stack social web application I designed, built, and deployed end-to-end. The platform focuses on creating a smooth and calm experience for sharing content and connecting with others while maintaining secure and scalable backend architecture.\n\nKey Features\n• Image posting system with admin moderation workflow (pending → approved)\n• Notification system for approvals and admin messages\n• Secure 1-to-1 messaging and global chat\n• Follow / followers system\n• Custom user profiles\n• Authentication-protected routes with role-based access control\n\nEngineering Highlights\n• Relational database schema design\n• Row Level Security (RLS) implementation\n• Secure authentication and permission handling\n• Real-time messaging and notifications\n• Admin moderation workflows\n• Production deployment and performance optimization\n\nThis project reflects my approach to building products: thoughtful design combined with reliable backend engineering.",
-      tech: ["Next.js", "React", "Tailwind CSS", "Supabase", "PostgreSQL", "Vercel"],
-      github_url: "https://github.com/programmerbeast2004/shotzi",
-      live_url: "https://shotzi.vercel.app",
-      image_url: "/assets/projects/proj4.jpg",
-      screenshot_url: "/assets/projects/proj4.jpg",
-      sort_order: 1
+      description: "Generate stunning, animated ASCII data cards instantly for your GitHub README. No database required. Fully customizable via URL.",
+      long_description: "Asciify allows developers to generate stunning, animated ASCII data cards instantly for their GitHub README profiles and project documentation.\n\nOperating completely stateless with no database required, cards are rendered on the fly and fully customizable via URL query parameters.\n\nKey Highlights\n• Dynamic animated ASCII art & data cards\n• Zero database overhead — stateless & URL-driven\n• Optimized SVG/ASCII rendering for GitHub README profiles\n• Custom styling, colors, and animation presets\n• Built with TypeScript, CSS, and modern web standards.",
+      tech: ["TypeScript", "CSS", "JavaScript", "SVG"],
+      github_url: "https://github.com/programmerbeast2004/Asciify",
+      live_url: "https://asciify.its-apoorv.me/",
+      image_url: "/assets/projects/asciify.jpg",
+      screenshot_url: "/assets/projects/asciify.jpg",
+      sort_order: 3
     },
     {
-      id: "proj_space_3d",
-      title: "Space",
-      featured: false,
+      id: "proj_pico_photobooth",
+      title: "Comic Café Photobooth Studio",
+      featured: true,
       type: "web",
-      description: "Interactive 3D particle visualization with interactive controls, responsive design, and ambient music.",
-      long_description: "Particle Field — Interactive 3D. An immersive, real-time 3D particle visualization with interactive controls, responsive design, and ambient music. Watch thousands of particles dance and respond to your cursor as they orbit in an infinite cosmic field.",
-      tech: ["HTML5", "CSS3", "JavaScript", "3D Rendering"],
-      github_url: "https://github.com/programmerbeast2004/Space",
-      live_url: "https://space-3d-seven.vercel.app/",
-      image_url: "/assets/projects/proj5.jpg",
-      screenshot_url: "/assets/projects/proj5.jpg",
+      description: "A beautiful 2D black-and-white comic-styled photobooth app. Snap photos, build a cute strip, add stickers, and download it — all in the browser.",
+      long_description: "A beautiful 2D black-and-white comic-styled photobooth app built with React + Tailwind CSS. Snap photos, build a cute strip, add stickers, and download it — all in the browser. No backend needed.\n\nFeatures include a live camera booth with countdown timers, 9 photo filters (Clear, B&W, Manga, Vintage, Dreamy, Sketch, Rosé, Fade, Comic), brightness and contrast adjustments, and a robust strip studio with 2/3/4-photo layouts. It also comes with 8 frame styles, 10 backgrounds, 40 draggable/resizable stickers, and a high-quality JPEG export feature.",
+      tech: ["React", "Tailwind CSS", "JavaScript", "html2canvas"],
+      github_url: "https://github.com/programmerbeast2004/PICO",
+      live_url: "https://pico.its-apoorv.me/",
+      image_url: "/assets/projects/proj7.jpg",
+      screenshot_url: "/assets/projects/proj7.jpg",
+      sort_order: 4
+    },
+    {
+      id: "proj_cis7",
+      title: "CIS-7 · Cosmic Intelligence System",
+      featured: true,
+      type: "web",
+      description: "Galactic Classification Challenge · Planet Survival AI. Runs an ML pipeline via FastAPI with a 3D galaxy scene using Three.js.",
+      long_description: "Built for the Galactic Classification Challenge (GCC). It runs a machine learning pipeline, dynamically loading a num_pipeline.pkl and best_svc_Model.pkl. It trains 9 background models (LR, DT, RF, KNN, XGB, GB, ADA, NB, ET) and visually represents classification via a live 3D galaxy scene using Three.js.",
+      tech: ["HTML/CSS", "Three.js", "FastAPI", "Uvicorn", "scikit-learn", "XGBoost", "Python"],
+      github_url: "https://github.com/programmerbeast2004/CIS-7",
+      live_url: "https://cis-7.onrender.com/",
+      image_url: "/assets/projects/proj8.jpg",
+      screenshot_url: "/assets/projects/proj8.jpg",
       sort_order: 5
     },
     {
@@ -207,32 +210,46 @@ export const portfolioConfig = {
       sort_order: 6
     },
     {
-      id: "proj_pico_photobooth",
-      title: "Comic Café Photobooth Studio",
-      featured: true,
+      id: "5391a3f9-6d73-4a43-92ff-48888303fb9e",
+      title: "Mechanical Elevator Clock",
+      featured: false,
       type: "web",
-      description: "A beautiful 2D black-and-white comic-styled photobooth app. Snap photos, build a cute strip, add stickers, and download it — all in the browser.",
-      long_description: "A beautiful 2D black-and-white comic-styled photobooth app built with React + Tailwind CSS. Snap photos, build a cute strip, add stickers, and download it — all in the browser. No backend needed.\n\nFeatures include a live camera booth with countdown timers, 9 photo filters (Clear, B&W, Manga, Vintage, Dreamy, Sketch, Rosé, Fade, Comic), brightness and contrast adjustments, and a robust strip studio with 2/3/4-photo layouts. It also comes with 8 frame styles, 10 backgrounds, 40 draggable/resizable stickers, and a high-quality JPEG export feature.",
-      tech: ["React", "Tailwind CSS", "JavaScript", "html2canvas"],
-      github_url: "https://github.com/programmerbeast2004/PICO",
-      live_url: "https://pico-photobooth.vercel.app/",
-      image_url: "/assets/projects/proj7.jpg",
-      screenshot_url: "/assets/projects/proj7.jpg",
+      description: "A visually engaging elevator-style digital clock that simulates moving number towers using smooth animations.",
+      long_description: "This project is a unique digital clock inspired by mechanical elevator display systems. Built using React and Tailwind CSS, it visually represents time through vertically scrolling number towers that mimic elevator movements behind fixed viewing windows. The clock updates in real time and provides both 12-hour and 24-hour formats for better usability. The focus of this project is on smooth animations, creative UI design, and performance optimization. It demonstrates strong frontend skills including state management, animation handling, and responsive design while delivering an interactive and visually appealing user experience.",
+      tech: ["React", "Tailwind CSS", "JavaScript", "CSS Animations"],
+      github_url: "https://github.com/programmerbeast2004/Digital_Clock",
+      live_url: "https://digital-clock-one-ochre.vercel.app/",
+      image_url: "/assets/projects/proj2.jpg",
+      screenshot_url: "/assets/projects/proj2.jpg",
       sort_order: 7
     },
     {
-      id: "proj_cis7",
-      title: "CIS-7 · Cosmic Intelligence System",
-      featured: true,
+      id: "a7832175-3b44-4cad-ad19-7f604a514d23",
+      title: "E-Commerce Product Store (React + Tailwind)",
+      featured: false,
       type: "web",
-      description: "Galactic Classification Challenge · Planet Survival AI. Runs an ML pipeline via FastAPI with a 3D galaxy scene using Three.js.",
-      long_description: "Built for the Galactic Classification Challenge (GCC). It runs a machine learning pipeline, dynamically loading a num_pipeline.pkl and best_svc_Model.pkl. It trains 9 background models (LR, DT, RF, KNN, XGB, GB, ADA, NB, ET) and visually represents classification via a live 3D galaxy scene using Three.js.",
-      tech: ["HTML/CSS", "Three.js", "FastAPI", "Uvicorn", "scikit-learn", "XGBoost", "Python"],
-      github_url: "https://github.com/programmerbeast2004/CIS-7",
-      live_url: "https://cis-7.onrender.com/",
-      image_url: "/assets/projects/proj8.jpg",
-      screenshot_url: "/assets/projects/proj8.jpg",
+      description: "A responsive e-commerce product store built with React and Tailwind CSS that fetches product data from an external API and displays it in a clean card-based interface.",
+      long_description: "This project is a practice-based e-commerce store built using React and Tailwind CSS. The application fetches product data from an external API and displays the products in a clean, modern card-based layout. Users can browse different items, view product details, and explore product categories through a responsive and user-friendly interface.\n\nThe main goal of this project was to practice modern frontend development concepts such as component-based architecture in React, API integration, and responsive UI design using Tailwind CSS. The project focuses on creating reusable components, maintaining a clean UI structure, and ensuring a smooth user experience across different screen sizes.\n\nThe application uses a fast development environment powered by Vite, allowing efficient builds and quick updates during development. Overall, this project demonstrates practical experience in building responsive web applications, handling API data, and implementing modern frontend design techniques using React and Tailwind CSS.",
+      tech: ["React", "Tailwind CSS", "JavaScript", "Vite", "REST API", "HTML", "CSS"],
+      github_url: "https://github.com/programmerbeast2004/WEB_dev_1",
+      live_url: "https://web-dev-1-three.vercel.app/",
+      image_url: "/assets/projects/proj3.jpg",
+      screenshot_url: "/assets/projects/proj3.jpg",
       sort_order: 8
+    },
+    {
+      id: "proj_space_3d",
+      title: "Space",
+      featured: false,
+      type: "web",
+      description: "Interactive 3D particle visualization with interactive controls, responsive design, and ambient music.",
+      long_description: "Particle Field — Interactive 3D. An immersive, real-time 3D particle visualization with interactive controls, responsive design, and ambient music. Watch thousands of particles dance and respond to your cursor as they orbit in an infinite cosmic field.",
+      tech: ["HTML5", "CSS3", "JavaScript", "3D Rendering"],
+      github_url: "https://github.com/programmerbeast2004/Space",
+      live_url: "https://space-3d-seven.vercel.app/",
+      image_url: "/assets/projects/proj5.jpg",
+      screenshot_url: "/assets/projects/proj5.jpg",
+      sort_order: 9
     }
   ],
 
