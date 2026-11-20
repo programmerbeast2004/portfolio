@@ -25,7 +25,6 @@ export const portfolioConfig = {
     id: null,
     name: "Apoorv Mehrotra",
     title: "AIML Enthusiast & MERN Stack Developer", // Displays under your name
-    bio: "Building at the intersection of Artificial Intelligence, Automation, and Digital Innovation. Passionate about creating intelligent systems, scalable products, and impactful experiences that transform ideas into meaningful solutions for the real world.",
     email: "apoorv.mehrotra.work@gmail.com",
     location: "India · Open to Onsite & Remote",
     available: true, // Changes the green/red dot status

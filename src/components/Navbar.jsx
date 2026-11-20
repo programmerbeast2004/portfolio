@@ -59,7 +59,13 @@ const Navbar = ({ onOpenTalk }) => {
         </ul>
         <div className="nav-r">
           <ThemeSwitch theme={theme} toggleTheme={toggleTheme} />
-          <button onClick={(e) => handleNavClick(e, 'contact')} className="nav-cta nav-cta-desktop" style={{border: 'none', cursor: 'pointer', fontFamily: 'inherit', fontSize: '12px', background: 'var(--text)', color: 'var(--bg)', padding: '8px 16px', borderRadius: '4px', textTransform: 'uppercase', fontWeight: 700}}>Hire Me</button>
+          <button 
+            onClick={(e) => handleNavClick(e, 'contact')} 
+            className="doodle-btn doodle-btn-hire nav-cta-desktop"
+            title="Get in touch"
+          >
+            Hire Me
+          </button>
           <button id="nav-burger" onClick={() => setBurgerOpen(!burgerOpen)} className={`nav-burger-btn ${burgerOpen ? 'open' : ''}`}>
             <span></span>
             <span></span>

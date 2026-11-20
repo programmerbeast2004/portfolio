@@ -15,9 +15,14 @@ const Projects = () => {
       <div className="container">
         <div className="s-lbl fi">04 / Projects</div>
         
-        <div style={{display:'flex', alignItems:'flex-end', justifyContent:'space-between', marginBottom:'60px'}}>
+        <div className="s-header-row">
           <h2 className="s-title fi d1" style={{marginBottom:0}}>Selected<br/><em>Work</em></h2>
-          <Link to="/projects" className="btn-s fi d2">View All</Link>
+          <Link to="/projects" className="doodle-btn doodle-btn-projects fi d2" title="View all projects">
+            <svg viewBox="0 0 24 24" fill="currentColor" style={{width:'15px', height:'15px', marginRight:'7px', transform: 'rotate(3deg)'}}>
+              <path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H8V4h12v12z"/>
+            </svg>
+            View All
+          </Link>
         </div>
 
         <div className="proj-g fi d2" id="proj-grid">

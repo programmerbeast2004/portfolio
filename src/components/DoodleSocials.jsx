@@ -124,6 +124,21 @@ const StyledWrapper = styled.div`
       width: 40px !important; 
       height: 40px !important;
     }
+    .doodle-action-btn {
+      padding: 9px 16px !important;
+      font-size: 11px !important;
+      letter-spacing: 1.5px !important;
+      border-width: 2.5px !important;
+      box-shadow: 3px 4px 0px var(--text) !important;
+    }
+    .doodle-action-btn svg {
+      width: 14px !important;
+      height: 14px !important;
+      margin-right: 5px !important;
+    }
+    .doodle-btns-wrapper {
+      gap: 8px !important;
+    }
   }
 
   @media (max-width: 500px) {

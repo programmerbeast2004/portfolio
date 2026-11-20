@@ -66,28 +66,99 @@ export const HeroContent = () => {
 
   return (
     <section id="hero-content">
-      <div className="container">
-      <div className="h-content" style={{position: 'relative', zIndex: 10, textAlign: 'left', alignItems: 'flex-start', padding: 0, marginLeft: 'auto', marginRight: '0', maxWidth: '850px', width: '100%'}}>
-        <div className="h-eyebrow" id="h-eyebrow" style={{justifyContent: 'flex-start'}}>{personal.location}</div>
-        <h1 className="h-name" style={{textAlign: 'left'}}>Apoorv<br/><em>Mehrotra</em></h1>
-        <div className="h-roles" style={{justifyContent: 'flex-start'}}><span>AIML Enthusiast</span><div className="rsep"></div><span>MERN Developer</span><div className="rsep"></div><span>Problem Solver</span></div>
-        
-        <div style={{
-          backgroundColor: 'var(--bg)',
-          padding: '40px',
-          marginTop: '40px',
-          marginBottom: '40px',
-          transition: 'background 0.3s ease',
-        }} onMouseEnter={(e) => e.currentTarget.style.background = 'var(--bg2)'} onMouseLeave={(e) => e.currentTarget.style.background = 'var(--bg)'}>
-          <p className="h-bio" id="h-bio" style={{textAlign: 'left', margin: 0, padding: 0, fontSize: '18px', lineHeight: '1.7', color: 'var(--text2)', border: 'none'}}>{personal.bio}</p>
-        </div>
+      <div className="container" style={{ width: '100%', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+        <div className="h-content" style={{
+          position: 'relative',
+          zIndex: 10,
+          textAlign: 'left',
+          alignItems: 'flex-start',
+          padding: 0,
+          width: '100%',
+          maxWidth: '100%',
+          height: '100%',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'space-between',
+          flex: 1
+        }}>
+          {/* Top Bar: Eyebrow Location */}
+          <div className="h-top-bar" style={{ width: '100%', display: 'flex', justifyContent: 'flex-start' }}>
+            <div className="h-eyebrow" id="h-eyebrow">
+              {personal.location}
+            </div>
+          </div>
 
-        <div className="h-btns" style={{justifyContent: 'flex-start', gap: '16px', display: 'flex'}}>
-          <Link to="/projects" className="btn-p">View Projects</Link>
-          <a href="/#contact" className="btn-p" onClick={(e) => { e.preventDefault(); if (window.Router) { window.Router.navTo(e, 'contact'); } }}>Let's Talk</a>
+          {/* Main Hero Centerpiece: Grand Display Typography & Specializations */}
+          <div className="h-main-intro" style={{ margin: 'auto 0', padding: '28px 0', width: '100%' }}>
+            <h1 className="h-name" style={{
+              textAlign: 'left',
+              marginBottom: '20px',
+              fontSize: 'clamp(68px, 9.5vw, 150px)',
+              lineHeight: '1.02',
+              letterSpacing: '-1px'
+            }}>
+              Apoorv
+              <em style={{ display: 'block', marginTop: '10px' }}>Mehrotra</em>
+            </h1>
+            
+            <div className="h-roles" style={{
+              justifyContent: 'flex-start',
+              fontSize: 'clamp(11px, 1.2vw, 14px)',
+              letterSpacing: '4px',
+              gap: '14px',
+              marginBottom: '20px'
+            }}>
+              <span>AIML Enthusiast</span>
+              <div className="rsep"></div>
+              <span>MERN Developer</span>
+              <div className="rsep"></div>
+              <span>Problem Solver</span>
+            </div>
+
+            <p style={{
+              maxWidth: '720px',
+              fontSize: 'clamp(14px, 1.25vw, 17px)',
+              lineHeight: '1.6',
+              color: 'var(--text3)',
+              fontFamily: "'Inter', sans-serif",
+              margin: '0',
+              fontWeight: '400',
+              letterSpacing: '-0.01em'
+            }}>
+              Engineering intelligent systems, scalable web architectures, and interactive digital experiences.
+            </p>
+          </div>
+
+          {/* Bottom Bar: Action CTAs + Scroll indicator */}
+          <div className="h-bottom-bar" style={{
+            width: '100%',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            flexWrap: 'wrap',
+            gap: '20px'
+          }}>
+            <div className="h-btns" style={{ justifyContent: 'flex-start', gap: '16px', display: 'flex', marginTop: 0 }}>
+              <Link to="/projects" className="btn-p">View Projects →</Link>
+              <a href="/#contact" className="btn-s" onClick={(e) => { e.preventDefault(); if (window.Router) { window.Router.navTo(e, 'contact'); } }}>Let's Talk ↗</a>
+            </div>
+
+            <div className="h-scroll-prompt" style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '10px',
+              fontFamily: "'DM Mono', monospace",
+              fontSize: '10px',
+              fontWeight: '700',
+              letterSpacing: '3px',
+              textTransform: 'uppercase',
+              color: 'var(--text3)'
+            }}>
+              <div style={{ width: '32px', height: '1px', background: 'var(--border-h)' }}></div>
+              <span>scroll</span>
+            </div>
+          </div>
         </div>
-      </div>
-      <div className="scroll-ind"><div className="scroll-ln"></div>scroll</div>
       </div>
     </section>
   );

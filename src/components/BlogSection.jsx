@@ -13,14 +13,17 @@ const BlogSection = () => {
     <section id="blog">
       <div className="container">
         <div className="s-lbl fi">07 / Blog</div>
-        <div style={{display:'flex', alignItems:'flex-end', justifyContent:'space-between', marginBottom:'60px'}}>
+        <div className="s-header-row">
           <h2 className="s-title fi d1" style={{marginBottom:0}}>Latest<br/><em>Writing</em></h2>
           {blogs && blogs.length > 3 && (
             <button 
               onClick={() => setShowAll(!showAll)} 
-              className="btn-s fi d2"
-              style={{ cursor: 'pointer', background: 'transparent', border: '1px solid var(--border)', color: 'var(--text)' }}
+              className="doodle-btn doodle-btn-blog fi d2"
+              title="Toggle all blog posts"
             >
+              <svg viewBox="0 0 24 24" fill="currentColor" style={{width:'15px', height:'15px', marginRight:'7px', transform: 'rotate(2deg)'}}>
+                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+              </svg>
               {showAll ? 'Show Less' : 'All Posts'}
             </button>
           )}

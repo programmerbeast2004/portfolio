@@ -8,7 +8,7 @@ const About = () => {
     <section id="about" style={{ paddingBottom: '40px', paddingTop: '40px' }}>
       <div className="container">
         <div className="s-lbl fi">01 / About</div>
-        <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', marginBottom: '60px' }}>
+        <div className="s-header-row">
           <h2 className="s-title fi d1" style={{ marginBottom: 0 }}>Where <em>code</em> meets <em>intelligence</em></h2>
         </div>
 

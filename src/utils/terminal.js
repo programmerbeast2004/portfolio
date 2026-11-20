@@ -196,7 +196,7 @@ const COMMAND_REGISTRY = {
     appendLine(`  🟢 <span class="${p.available ? 't-green' : 't-red'}">${p.available ? 'Available for opportunities' : 'Currently unavailable'}</span>\n`);
 
     // Word wrapper for bio
-    const words = p.bio.split(' ');
+    const words = (p.bio || '').split(' ').filter(Boolean);
     let line = '';
     for (const word of words) {
       if ((line + word).length > 60) {
