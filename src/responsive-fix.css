@@ -754,26 +754,30 @@ body.dark .h-bg-word {
     gap: 12px !important;
   }
 
-  /* Compact Doodle Buttons on Small Devices - Proportional, Never Oversized */
+  /* Compact Doodle Buttons on Small Devices - Keeps the exact uneven hand-drawn look, never rounded */
   .doodle-btn {
-    padding: 6px 14px !important;
-    font-size: 10px !important;
-    letter-spacing: 1px !important;
-    border-width: 2px !important;
-    box-shadow: 2.5px 3.5px 0px var(--text) !important;
-    border-radius: 12px !important;
+    padding: 7px 15px !important;
+    font-size: 11px !important;
+    letter-spacing: 1.5px !important;
+    border-width: 2.5px !important;
+    box-shadow: 3px 4px 0px var(--text) !important;
+    filter: url(#pencil-texture) !important;
     flex-shrink: 0 !important;
   }
   .doodle-btn svg {
-    width: 12px !important;
-    height: 12px !important;
-    margin-right: 4px !important;
+    width: 13px !important;
+    height: 13px !important;
+    margin-right: 5px !important;
+  }
+  .doodle-btn-hire {
+    padding: 6px 14px !important;
+    font-size: 10.5px !important;
   }
   .doodle-btn-projects,
   .doodle-btn-certs,
   .doodle-btn-blog {
-    padding: 6px 14px !important;
-    font-size: 10px !important;
+    padding: 7px 15px !important;
+    font-size: 11px !important;
   }
 
   /* Compact Hero Layout on Small Devices to avoid excessive scroll */
